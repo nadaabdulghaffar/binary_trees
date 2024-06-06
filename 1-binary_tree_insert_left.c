@@ -23,7 +23,9 @@
 		}
 
 		tmp = parent->left;
-		parent->left = binary_tree_node(parent, value);
-		parent->left->left = tmp;
-		return (parent->left);
+		newNode = binary_tree_node(parent, value);
+		tmp->parent = newNode;
+		newNode->left = tmp;
+		parent->left = newNode;
+		return (newNode);
 }
